@@ -47,7 +47,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           "Access-Control-Allow-Origin":"*"
         },
       };
-      const { data } = await axios.get(`http://localhost:5000/user?search=${search}`, config);
+      const { data } = await axios.get(`https://chatback-5t6q.onrender.com/user?search=${search}`, config);
       console.log(data);
       setLoading(false);
       setSearchResult(data);
@@ -75,7 +75,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/chat/rename`,
+        `https://chatback-5t6q.onrender.com/chat/rename`,
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -134,7 +134,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/chat/groupadd`,
+        `https://chatback-5t6q.onrender.com/chat/groupadd`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -180,7 +180,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/chat/groupremove`,
+        `https://chatback-5t6q.onrender.com/chat/groupremove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,

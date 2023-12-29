@@ -78,7 +78,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`http://localhost:5000/user?search=${search}`, config);
+      const { data } = await axios.get(`https://chatback-5t6q.onrender.com/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);
@@ -106,7 +106,7 @@ function SideDrawer() {
           "Access-Control-Allow-Origin":"*"
         },
       };
-      const { data } = await axios.post(`http://localhost:5000/chat`, { userId }, config);
+      const { data } = await axios.post(`https://chatback-5t6q.onrender.com/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);

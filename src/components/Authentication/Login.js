@@ -42,7 +42,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:5000/user/login",
+        "https://chatback-5t6q.onrender.com/user/login",
         { email, password },
         config
       );

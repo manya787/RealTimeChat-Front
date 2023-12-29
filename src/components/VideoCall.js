@@ -93,7 +93,7 @@ const VideoCall = () => {
      
      
      useEffect(() => {
-        sc = io('http://localhost:5000');
+        sc = io('https://chatback-5t6q.onrender.com');
 
         sc.on("user-joined",newUserJoined);
         sc.on("incoming-call",handelIncomingCall);

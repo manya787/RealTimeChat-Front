@@ -17,7 +17,7 @@ import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
 import { useSocket } from "../Socket";
 import { useNavigate } from "react-router-dom";
-const ENDPOINT = "http://localhost:5000"; // "https://realtimechat.herokuapp.com"; -> After deployment
+const ENDPOINT = "https://chatback-5t6q.onrender.com";
 let sc, selectedChatCompare;
 
 
@@ -58,7 +58,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://localhost:5000/message/${selectedChat._id}`,
+        `https://chatback-5t6q.onrender.com/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -91,7 +91,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "http://localhost:5000/message",
+          "https://chatback-5t6q.onrender.com/message",
           {
             content: newMessage,
             chatId: selectedChat,
@@ -126,7 +126,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "http://localhost:5000/message",
+          "https://chatback-5t6q.onrender.com/message",
           {
             content: newMessage ?? pic,
             chatId: selectedChat,
